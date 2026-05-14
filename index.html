@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="description" content="經典貪食蛇遊戲 - PWA">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="貪食蛇">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>貪食蛇</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <h1 class="title">貪食蛇</h1>
+      <div class="score-board">
+        <div class="score-item">
+          <span class="label">分數</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-item">
+          <span class="label">最高</span>
+          <span class="value" id="highScore">0</span>
+        </div>
+      </div>
+    </header>
+    
+    <div class="game-area">
+      <canvas id="gameCanvas"></canvas>
+      <div class="overlay" id="startOverlay">
+        <div class="overlay-content">
+          <div class="snake-icon">🐍</div>
+          <h2>準備好了嗎？</h2>
+          <p>使用方向鍵或滑動控制蛇的方向</p>
+          <button class="btn btn-primary" id="startBtn">開始遊戲</button>
+        </div>
+      </div>
+      <div class="overlay hidden" id="gameOverOverlay">
+        <div class="overlay-content">
+          <h2>遊戲結束</h2>
+          <p class="final-score">最終分數: <span id="finalScore">0</span></p>
+          <button class="btn btn-primary" id="restartBtn">再來一次</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <div class="control-hint">
+        <span>⌨️ 鍵盤</span>
+        <span>📱 觸控</span>
+      </div>
+      <button class="btn btn-icon" id="installBtn" style="display: none;">安裝 App</button>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
